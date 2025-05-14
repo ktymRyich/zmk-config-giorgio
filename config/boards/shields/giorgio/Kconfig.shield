@@ -1,0 +1,5 @@
+condig SHIELD_GIORGIO_LEFT
+    def_bool $(shields_list_contains,giorgio_left)
+
+config SHIELD_GIORGIO_RIGHT
+    def_bool $(shields_list_contains,giorgio_right)

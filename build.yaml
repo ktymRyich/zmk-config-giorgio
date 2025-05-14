@@ -20,4 +20,7 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: tester_xiao
+    shield: giorgio_left
+  - board: seeeduino_xiao_ble
+    shield: giorgio_right
+

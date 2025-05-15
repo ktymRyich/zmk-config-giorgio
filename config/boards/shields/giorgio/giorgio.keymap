@@ -73,8 +73,8 @@
             >;
         };
 
-        my_insert_layer { // L_INSERT
-            display-name = "Insert";
+        letter_layer { // L_INSERT
+            display-name = "Letter";
             bindings = <
                 &ltt L_DEFAULT ESC &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 

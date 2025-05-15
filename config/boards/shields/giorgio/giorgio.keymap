@@ -29,6 +29,15 @@
             bindings = <&msc>, <&msc>;
         };
 
+        ltt: layer_tap_to {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&to>, <&kp>;
+            display-name = "Layer-Tap-To";
+        }
+
 //        lr_par: lr_par {
 //            compatible = "zmk,behavior-mod-morph";
 //            #binding-cells = <0>;
@@ -55,6 +64,7 @@
         compatible = "zmk,keymap";
 
         default_layer { // L_DEFAULT
+            display-name = "Utility";
             bindings = <
                 &kp ESC   &kp SS3        &kp SS4        &mmv MOVE_UP   &trans             &kp LG(LS(Z))     &trans    &kp LG(LS(Z)) &trans          &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
                 &kp TAB   &trans         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &bt BT_SEL 0      &kp LEFT  &kp DOWN      &kp UP          &kp RIGHT      &mmv MOVE_RIGHT &kp DEL
@@ -64,8 +74,9 @@
         };
 
         my_insert_layer { // L_INSERT
+            display-name = "Insert";
             bindings = <
-                &lt L_DEFAULT ESC &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
+                &llt L_DEFAULT &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp A &kp A &kp A &kp A &kp A &kp A &kp A &kp A 

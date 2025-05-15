@@ -34,7 +34,7 @@
                 &kp LSFT  &trans        &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &bt BT_SEL 2      &kp J    &kp MY_COPY   &kp MY_PASTE    &kp L          &mkp MB4        &mkp MB5
                                         &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1          &mkp MB1 &mkp MB2      &kp LALT        &kp SS5
             >;
-            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>
+            sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };

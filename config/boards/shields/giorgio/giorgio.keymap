@@ -16,10 +16,10 @@
 
 #define MISCON C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
 
-#define L_DEFAULT
-#define L_INSERT
-#define L_NUMBER
-#define L_BT
+#define L_DEFAULT 0
+#define L_INSERT 1
+#define L_NUMBER 2
+#define L_BT 3
 
 / {
     behaviors {

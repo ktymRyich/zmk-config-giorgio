@@ -76,7 +76,7 @@
         letter_layer { // L_INSERT
             display-name = "Letter";
             bindings = <
-                &ltt 0 ESC &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
+                &ltt L_DEFAULT ESC &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp A &kp A &kp A &kp A &kp A &kp A &kp A &kp A 

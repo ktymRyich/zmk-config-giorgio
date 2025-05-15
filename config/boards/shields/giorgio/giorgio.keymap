@@ -41,14 +41,14 @@
             #binding-cells = <0>;
             bindings = <&kp LBKT>, <&kp LBRC>;
             mods = <MOD_LSFT>;
-        }
+        };
 
         r_bkt_brc: r_bkt_brc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp RBKT>, <&kp RBRC>;
             mods = <MOD_LSFT>;
-        }
+        };
     };
 
     keymap {

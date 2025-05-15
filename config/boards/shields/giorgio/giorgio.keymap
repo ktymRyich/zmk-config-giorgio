@@ -76,7 +76,7 @@
         my_insert_layer { // L_INSERT
             display-name = "Insert";
             bindings = <
-                &llt L_DEFAULT &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
+                &llt L_DEFAULT ESC &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp A &kp A &kp A &kp A &kp A &kp A &kp A &kp A 

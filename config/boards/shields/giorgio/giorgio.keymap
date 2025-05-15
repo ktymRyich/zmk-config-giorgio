@@ -29,26 +29,26 @@
             bindings = <&msc>, <&msc>;
         };
 
-        lr_par: lr_par {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LPAR>, <&kp RPAR>;
-            mods = <MOD_LSFT>;
-        };
-
-        l_bkt_brc: l_bkt_brc {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT>, <&kp LBRC>;
-            mods = <MOD_LSFT>;
-        };
-
-        r_bkt_brc: r_bkt_brc {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RBKT>, <&kp RBRC>;
-            mods = <MOD_LSFT>;
-        };
+//        lr_par: lr_par {
+//            compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            bindings = <&kp LPAR>, <&kp RPAR>;
+//            mods = <MOD_LSFT>;
+//        };
+//
+//        l_bkt_brc: l_bkt_brc {
+//            compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            bindings = <&kp LBKT>, <&kp LBRC>;
+//            mods = <MOD_LSFT>;
+//        };
+//
+//        r_bkt_brc: r_bkt_brc {
+//            compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            bindings = <&kp RBKT>, <&kp RBRC>;
+//            mods = <MOD_LSFT>;
+//        };
     };
 
     keymap {
@@ -66,8 +66,8 @@
         insert_layer { // L_INSERT
             bindings = <
                 &lt L_DEFAULT ESC &kp Q         &kp W          &kp E          &kp R               &kp T             &kp Y      &kp U             &kp I           &kp O          &kp P           &kp BSPC
-                &kp TAB           &kp A         &kp S          &kp D          &kp F               &kp G             &kp H      &kp J             &kp K           &kp L          &kp SEMICOLON   &lr_par
-                &kp LSFT          &kp Z         &kp X          &kp C          &kp V               &kp B             &kp N      &kp M             &kp COMMA       &kp PERIOD     &kp EQUAL       &l_bkt_brc
+                &kp TAB           &kp A         &kp S          &kp D          &kp F               &kp G             &kp H      &kp J             &kp K           &kp L          &kp SEMICOLON   &kp LPAR
+                &kp LSFT          &kp Z         &kp X          &kp C          &kp V               &kp B             &kp N      &kp M             &kp COMMA       &kp PERIOD     &kp EQUAL       &kp LBKT
                                                 &kp LCTRL      &kp LCMD       &lt L_NUMBER LANG2  &kp SPC           &kp ENTER  &lt L_NUMBER LANG1  &kp BSPC        &kp LALT
             >;
         };
@@ -76,7 +76,7 @@
             bindings = <
                 &lt L_DEFAULT ESC &kp N1  &kp N2         &kp N3         &kp N4             &kp N5            &kp N6     &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
                 &kp TAB   &kp EXCL        &kp DQT        &kp HASH       &kp DLLR           &kp PRCNT         &kp AMPS   &kp SQT           &kp AT          &kp CARET      &kp TILDE       &kp BSLH
-                &kp LSFT  &kp PLUS        &kp MINUS      &kp STAR       &kp SLASH          &trans            &kp GRAVE  &kp UNDER         &kp COMMA       &kp PERIOD     &kp SLASH       &r_bkt_brc
+                &kp LSFT  &kp PLUS        &kp MINUS      &kp STAR       &kp SLASH          &trans            &kp GRAVE  &kp UNDER         &kp COMMA       &kp PERIOD     &kp SLASH       &kp RPAR
                                           &kp LCTRL      &kp LCMD       &trans             &kp SPC           &kp ENTER  &trans            &kp BSPC        &kp LALT
             >;
         };

@@ -14,10 +14,14 @@
 // | SHFT |     |CL(L)|CL(U)|CL(R)| BT3 |               | SHFT |     |CL(L)|CL(U)|CL(R)| BT3 |
 //                    |LCTRL| LCMD| ML  | MR  |   |LCTRL| LCMD| ML  | MR  |
             bindings = <
-    &kp ESC  &none &none          &mmv MOVE_UP   &redo           &bt BT1                            &none    &none      &none          &mmv MOVE_UP   &redo           &bt BT1
-    &kp TAB  &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &bt BT2                            &none    &none      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &bt BT2
-    &kp LSFT &none &kp LC(LEFT)   &kp LC(UP)     &kp LC(RIGHT)   &bt BT3                            &none    &none      &kp LC(LEFT)   &kp LC(UP)     &kp LC(RIGHT)   &bt BT3
-                                  &kp LCTRL      &kp LCMD        &mkp MB1   &mkp MB2     &mkp MB1   &mkp MB2 &kp LALT   &mkp MB2
+//                &kp ESC   &none     &none     &mmv MOVE_UP   &redo           &bt BT1                            &none    &none      &none          &mmv MOVE_UP   &redo           &bt BT1
+//                &kp TAB   &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &bt BT2                            &none    &none      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &bt BT2
+//                &kp LSFT  &none     &kp LC(LEFT)   &kp LC(UP)     &kp LC(RIGHT)   &bt BT3                            &none    &none      &kp LC(LEFT)   &kp LC(UP)     &kp LC(RIGHT)   &bt BT3
+//                                              &kp LCTRL      &kp LCMD        &mkp MB1   &mkp MB2     &mkp MB1   &mkp MB2 &kp LALT   &mkp MB2
+                &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
+                &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
+                &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
+                &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
             >;
         };
     };

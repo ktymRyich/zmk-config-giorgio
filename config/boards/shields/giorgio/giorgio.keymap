@@ -36,7 +36,7 @@
             tapping-term-ms = <200>;
             bindings = <&to>, <&kp>;
             display-name = "Layer-Tap-To";
-        }
+        };
 
 //        lr_par: lr_par {
 //            compatible = "zmk,behavior-mod-morph";

@@ -14,7 +14,7 @@
 #define MY_COPY LG(C)
 #define MY_PASTE LG(V)
 
-#define MISCON C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
+#define MISCON C_AC_DESKTOP_SHOW_ALL_WINDOWS
 
 #define L_DEFAULT 0
 #define L_INSERT 1
@@ -66,7 +66,7 @@
         default_layer { // L_DEFAULT
             display-name = "Utility";
             bindings = <
-                &kp ESC   &kp SS3        &kp SS4        &mmv MOVE_UP   &trans             &kp LG(LS(Z))     &trans    &kp LG(LS(Z)) &trans          &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
+                &kp ESC   &kp SS3        &kp SS4        &mmv MOVE_UP   &trans             &kp LG(LS(Z))     &trans    &kp LG(LS(Z)) &to L_INSERT    &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
                 &kp TAB   &trans         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &bt BT_SEL 0      &kp LEFT  &kp DOWN      &kp UP          &kp RIGHT      &mmv MOVE_RIGHT &kp DEL
                 &kp LSFT  &trans         &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &trans            &kp J     &kp MY_COPY   &kp MY_PASTE    &kp L          &mkp MB4        &mkp MB5
                                          &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1          &mkp MB1  &mkp MB2      &kp LALT        &kp SS5

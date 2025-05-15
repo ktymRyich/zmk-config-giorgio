@@ -3,15 +3,15 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define SS3 LCMD(LSHFT(3))
-#define SS4 LCMD(LSHFT(4))
-#define SS5 LCMD(LSHFT(5))
+#define SS3 LG(LS(3))
+#define SS4 LG(LS(4))
+#define SS5 LG(LS(5))
 
-#define MY_UNDO LCMD(Z)
-#define MY_REDO LCMD(LSHFT(Z))
+#define MY_UNDO LG(Z)
+#define MY_REDO LG(LS(Z))
 
-#define MY_COPY LCMD(C)
-#define MY_PASTE LCMD(V)
+#define MY_COPY LG(C)
+#define MY_PASTE LG(V)
 
 #define MISCON C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
 
@@ -21,7 +21,7 @@
 
         default_layer {
             bindings = <
-                &kp ESC   &kp SS3   &kp SS4        &mmv MOVE_UP   &kp LCMD(LSHFT(Z)) &bt BT1       &none    &kp LCMD(Z)  &none           &kp C_BRI_DOWN &kp C_BRI_UP    &kp BSPC
+                &kp ESC   &kp SS3   &kp SS4        &mmv MOVE_UP   &kp MY_REDO        &bt BT1       &none    &kp MY_UNDO  &none           &kp C_BRI_DOWN &kp C_BRI_UP    &kp BSPC
                 &kp TAB   &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &bt BT2       &kp LEFT &kp DOWN     &kp UP          &kp RIGHT      &mmv MOVE_RIGHT &kp DEL
                 &kp LSFT  &none     &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &bt BT3       &kp J    &kp MY_COPY  &kp MY_PASTE    &kp L          &mkp MB4        &mkp MB5
                                     &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1      &mkp MB1 &mkp MB2     &kp LALT        &kp SS5

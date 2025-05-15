@@ -55,7 +55,6 @@
         compatible = "zmk,keymap";
 
         default_layer { // L_DEFAULT
-            display-name = "
             bindings = <
                 &kp ESC   &kp SS3        &kp SS4        &mmv MOVE_UP   &trans             &kp LG(LS(Z))     &trans    &kp LG(LS(Z)) &trans          &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
                 &kp TAB   &trans         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &bt BT_SEL 0      &kp LEFT  &kp DOWN      &kp UP          &kp RIGHT      &mmv MOVE_RIGHT &kp DEL

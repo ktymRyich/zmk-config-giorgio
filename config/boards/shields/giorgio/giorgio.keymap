@@ -21,10 +21,10 @@
 
         default_layer {
             bindings = <
-                &kp ESC   &kp SS3   &kp SS4        &mmv MOVE_UP   &kp MY_REDO        &bt BT1       &none    &kp MY_UNDO  &none           &kp C_BRI_DOWN &kp C_BRI_UP    &kp BSPC
-                &kp TAB   &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &bt BT2       &kp LEFT &kp DOWN     &kp UP          &kp RIGHT      &mmv MOVE_RIGHT &kp DEL
-                &kp LSFT  &none     &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &bt BT3       &kp J    &kp MY_COPY  &kp MY_PASTE    &kp L          &mkp MB4        &mkp MB5
-                                    &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1      &mkp MB1 &mkp MB2     &kp LALT        &kp SS5
+                &kp ESC   &kp LG(LS(3)) &kp LG(LS(4))  &mmv MOVE_UP   &kp LG(LS(Z))      &bt BT1       &none    &kp LG(LS(Z)) &none           &kp C_BRI_DOWN &kp C_BRI_UP    &kp BSPC
+                &kp TAB   &none         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &bt BT2       &kp LEFT &kp DOWN      &kp UP          &kp RIGHT      &mmv MOVE_RIGHT &kp DEL
+                &kp LSFT  &none         &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &bt BT3       &kp J    &kp MY_COPY   &kp MY_PASTE    &kp L          &mkp MB4        &mkp MB5
+                                        &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1      &mkp MB1 &mkp MB2      &kp LALT        &kp SS5
             >;
         };
     };

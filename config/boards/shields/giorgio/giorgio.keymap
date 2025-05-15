@@ -65,7 +65,7 @@
 
         my_insert_layer { // L_INSERT
             bindings = <
-                &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
+                &lt L_DEFAULT ESC &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z &kp Z 
                 &kp A &kp A &kp A &kp A &kp A &kp A &kp A &kp A 

@@ -3,25 +3,32 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define SS3 LCMD(LSHFT(3))
+#define SS4 LCMD(LSHFT(4))
+#define SS5 LCMD(LSHFT(5))
+
+#define UNDO LCMD(Z)
+#define REDO LCMD(LSHFT(Z))
+
+#define COPY LCMD(C)
+#define PASTE LCMD(V)
+
+#define MISCON C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
+
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-// -----------------------------------------------------------------------------------------
-// |  ESC |     |     | M_U |     | BT1 |               |      | und | TO(1) | M_U |     | BT1 |
-// |  TAB |     | M_L | M_D | M_R | BT2 |               |  TAB |     | M_L | M_D | M_R | BT2 |
-// | SHFT |     |CL(L)|CL(U)|CL(R)| BT3 |               | SHFT |     |CL(L)|CL(U)|CL(R)| BT3 |
-//                    |LCTRL| LCMD| ML  | MR  |   |LCTRL| LCMD| ML  | MR  |
             bindings = <
-//                &kp ESC   &none     &none     &mmv MOVE_UP   &redo           &bt BT1                            &none    &none      &none          &mmv MOVE_UP   &redo           &bt BT1
-//                &kp TAB   &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &bt BT2                            &none    &none      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &bt BT2
-//                &kp LSFT  &none     &kp LC(LEFT)   &kp LC(UP)     &kp LC(RIGHT)   &bt BT3                            &none    &none      &kp LC(LEFT)   &kp LC(UP)     &kp LC(RIGHT)   &bt BT3
-//                                              &kp LCTRL      &kp LCMD        &mkp MB1   &mkp MB2     &mkp MB1   &mkp MB2 &kp LALT   &mkp MB2
-                &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
-                &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
-                &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
-                &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
+                &kp ESC   &kp SS3   &kp SS4        &mmv MOVE_UP   &kp REDO           &bt BT1       &none    &kp UNDO   &none          &kp C_BRI_DOWN &kp C_BRI_UP    &kp BSPC
+                &kp TAB   &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &bt BT2       &kp LEFT &kp DOWN   &kp UP         &kp RIGHT      &mmv MOVE_RIGHT &kp DEL
+                &kp LSFT  &none     &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &bt BT3       &kp J    &kp COPY   &kp PASTE      &kp L          &mkp MB4        &mkp MB5
+                                    &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1      &mkp MB1 &mkp MB2   &kp LALT       &kp SS5
+//                &kp z             &kp Z    &kp Z    &kp Z    &kp Z        &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
+//                &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z        &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
+//                &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z        &kp Z    &kp Z    &kp Z    &kp Z    &kp Z    &kp Z
+//                                  &kp Z    &kp Z    &kp Z    &kp Z        &kp Z    &kp Z    &kp Z    &kp Z
             >;
         };
     };

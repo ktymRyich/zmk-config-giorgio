@@ -93,7 +93,7 @@
             bindings = <
                 &ltt L_DEFAULT ESC &kp N1          &kp N2         &kp N3         &kp N4             &kp N5                &kp N6         &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
                 &kp TAB            &kp EXCL        &kp DQT        &kp HASH       &kp DLLR           &kp PRCNT             &kp AMPS       &kp SQT           &kp AT          &kp CARET      &kp TILDE       &kp BSLH
-                &kp LSFT           &kp PLUS        &kp MINUS      &kp STAR       &kp SLASH          &trans                &kp GRAVE      &kp UNDER         &kp COMMA       &kp PERIOD     &kp SLASH       &r_bkt_brc
+                &kp LSFT           &kp PLUS        &kp MINUS      &kp STAR       &kp SLASH          &kp EQUAL             &kp GRAVE      &kp UNDER         &kp COMMA       &kp PERIOD     &kp SLASH       &r_bkt_brc
                                                    &kp LCTRL      &kp LCMD       &trans             &kp SPC               &kp ENTER      &trans            &kp BSPC        &kp LALT
             >;
         };

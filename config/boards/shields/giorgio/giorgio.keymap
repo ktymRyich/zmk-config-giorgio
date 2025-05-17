@@ -68,12 +68,12 @@
             mods = <MOD_LSFT>;
         };
 
-//        win_key_23: win_key_23 {
-//            compatible = "zmk,behavior-mod-morph";
-//            #binding-cells = <0>;
-//            bindings = <&kp SQT>, <&kp SEMICOLON>;
-//            mods = <MOD_LSFT>;
-//        };
+        win_key_23: win_key_23 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp SEMICOLON>;
+            mods = <MOD_LSFT>;
+        };
 //        win_key_24: win_key_24 { // ( )
 //            compatible = "zmk,behavior-mod-morph";
 //            #binding-cells = <0>;

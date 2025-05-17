@@ -17,9 +17,11 @@
 #define MISCON C_AC_DESKTOP_SHOW_ALL_WINDOWS
 
 #define L_DEFAULT 0
-#define L_INSERT 1
-#define L_NUMBER 2
-#define L_BT 3
+#define L_BT 1
+#define L_MAC_INSERT 2
+#define L_MAC_NUMBER 3
+#define L_WIN_INSERT 4
+#define L_WIN_NUMBER 5
 
 / {
     behaviors {
@@ -65,6 +67,80 @@
             bindings = <&kp COLON>, <&kp SEMICOLON>;
             mods = <MOD_LSFT>;
         };
+
+        win_key_23: win_key_23 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp SEMICOLON>;
+            mods = <MOD_LSFT>;
+        };
+        win_key_24: win_key_24 { // ( )
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LSFT(N8)>, <&kp LSFT(N9)>;
+            mods = <MOD_LSFT>; 
+        };
+        win_key_35: win_key_35 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp UNDER>, <&kp COLON>;
+            mods = <MOD_LSFT>; 
+        };
+
+        win_num_20: win_num_20 { // ' "
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LSFT(N7)>, <&kp LSFT(N2)>;
+            mods = <MOD_LSFT>;
+        };
+        win_num_21: win_num_21 { // @ @
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp LBKT>;
+            mods = <MOD_LSFT>;
+        };
+        win_num_22: win_num_22 { // ^ ^
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL>, <&kp EQUAL>;
+            mods = <MOD_LSFT>;
+        };
+        win_num_23: win_num_23 { // ~ ~
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS>, <&kp PLUS>;
+            mods = <MOD_LSFT>;
+        };
+        win_num_24: win_num_24 { // ¥ | todo
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS>, <&kp PLUS>;
+            mods = <MOD_LSFT>;
+        };
+        win_num_26: win_num_26 { // + +
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp COLON>;
+            mods = <MOD_LSFT>;
+        };
+        win_num_27: win_num_27 { // - _ todo
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp MINUS>;
+            mods = <MOD_LSFT>;
+        };
+        win_num_31: win_num_31 { // ` ~
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC>, <&kp PLUS>;
+            mods = <MOD_LSFT>;
+        };
+        win_num_32: win_num_32 { // _ _ todo
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp MINUS>;
+            mods = <MOD_LSFT>;
+        };
     };
 
     keymap {
@@ -73,28 +149,10 @@
         default_layer { // L_DEFAULT
             display-name = "Utility";
             bindings = <
-                &kp ESC   &kp SS3        &kp SS4        &mmv MOVE_UP   &trans             &kp LG(LS(Z))       &trans    &kp LG(LS(Z)) &to L_INSERT    &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
+                &kp ESC   &kp SS3        &kp SS4        &mmv MOVE_UP   &trans             &kp LG(LS(Z))       &trans    &kp LG(LS(Z)) &to L_MAC_INSERT    &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
                 &kp TAB   &trans         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &to L_BT            &kp LEFT  &kp DOWN      &kp UP          &kp RIGHT      &mkp MB4        &kp DEL
                 &kp LSFT  &trans         &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &trans              &kp J     &kp MY_COPY   &kp MY_PASTE    &kp L          &mkp MB5        &trans
                                          &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1            &mkp MB1  &mkp MB2      &kp LALT        &kp SS5
-            >;
-        };
-
-        my_insert_layer { // L_INSERT
-            bindings = <
-                &ltt L_DEFAULT ESC &kp Q         &kp W          &kp E          &kp R               &kp T             &kp Y      &kp U               &kp I           &kp O          &kp P           &kp BSPC
-                &kp TAB            &kp A         &kp S          &kp D          &kp F               &kp G             &kp H      &kp J               &kp K           &kp L          &csc            &lr_par
-                &kp LSFT           &kp Z         &kp X          &kp C          &kp V               &kp B             &kp N      &kp M               &kp COMMA       &kp PERIOD     &kp EQUAL       &l_bkt_brc
-                                                 &kp LCTRL      &kp LCMD       &lt L_NUMBER LANG2  &kp SPACE         &kp ENTER  &lt L_NUMBER LANG1  &kp BSPC        &kp LALT
-            >;
-        };
-
-        number_layer { // L_NUMBER
-            bindings = <
-                &ltt L_DEFAULT ESC &kp N1          &kp N2         &kp N3         &kp N4             &kp N5                &kp N6         &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
-                &kp TAB            &kp EXCL        &kp DQT        &kp HASH       &kp DLLR           &kp PRCNT             &kp AMPS       &kp SQT           &kp AT          &kp CARET      &kp TILDE       &kp BSLH
-                &kp LSFT           &kp PLUS        &kp MINUS      &kp STAR       &kp SLASH          &kp EQUAL             &kp GRAVE      &kp UNDER         &kp COMMA       &kp PERIOD     &kp SLASH       &r_bkt_brc
-                                                   &kp LCTRL      &kp LCMD       &trans             &kp SPC               &kp ENTER      &trans            &kp BSPC        &kp LALT
             >;
         };
 
@@ -106,5 +164,44 @@
                                         &bt BT_CLR         &trans         &trans             &trans            &trans     &trans            &trans          &trans
             >;
         };
+
+        // Macintosh =========================================================
+        mac_insert_layer { // L_MAC_INSERT
+            bindings = <
+                &ltt L_DEFAULT ESC &kp Q         &kp W          &kp E          &kp R         &kp T                                            &kp Y                  &kp U           &kp I           &kp O          &kp P           &kp BSPC
+                &kp TAB            &kp A         &kp S          &kp D          &kp F         &kp G                                            &kp H                  &kp J           &kp K           &kp L          &csc            &lr_par
+                &kp LSFT           &kp Z         &kp X          &kp C          &kp V         &kp B                                            &kp N                  &kp M           &kp COMMA       &kp PERIOD     &kp EQUAL       &l_bkt_brc
+                                                                &kp LCTRL      &kp LCMD      &lt L_MAC_NUMBER LANG2  &kp SPACE     &kp ENTER  &lt L_MAC_NUMBER LANG1 &kp BSPC        &kp LALT
+            >;
+        };
+
+        mac_number_layer { // L_MAC_NUMBER
+            bindings = <
+                &ltt L_DEFAULT ESC &kp N1          &kp N2         &kp N3         &kp N4             &kp N5                                          &kp N6         &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
+                &kp TAB            &kp EXCL        &kp DQT        &kp HASH       &kp DLLR           &kp PRCNT                                       &kp AMPS       &kp SQT           &kp AT          &kp CARET      &kp TILDE       &kp BSLH
+                &kp LSFT           &kp PLUS        &kp MINUS      &kp STAR       &kp SLASH          &kp EQUAL                                       &kp GRAVE      &kp UNDER         &kp COMMA       &kp PERIOD     &kp SLASH       &r_bkt_brc
+                                                                  &kp LCTRL      &kp LCMD           &trans       &kp SPC               &kp ENTER    &trans         &kp BSPC          &kp LALT
+            >;
+        };
+
+        // Windows ===========================================================
+        win_insert_layer { // L_WIN_INSERT
+            bindings = <
+                &ltt L_DEFAULT ESC &kp Q         &kp W          &kp E          &kp R         &kp T                                            &kp Y                  &kp U           &kp I           &kp O          &kp P           &kp BSPC
+                &kp TAB            &kp A         &kp S          &kp D          &kp F         &kp G                                            &kp H                  &kp J           &kp K           &kp L          &win_key_23     &win_key_24
+                &kp LSFT           &kp Z         &kp X          &kp C          &kp V         &kp B                                            &kp N                  &kp M           &kp COMMA       &kp PERIOD     &win_key_35     &RBKT
+                                                                &kp LCTRL      &kp LCMD      &lt L_MAC_NUMBER LANG2  &kp SPACE     &kp ENTER  &lt L_MAC_NUMBER LANG1 &kp BSPC        &kp LALT
+            >;
+        };
+
+        win_number_layer { // L_WIN_NUMBER
+            bindings = <
+                &ltt L_DEFAULT ESC &kp N1          &kp N2         &kp N3         &kp N4             &kp N5                                          &kp N6         &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
+                &kp TAB            &kp EXCL        &kp LSFT(N2)   &kp HASH       &kp DLLR           &kp PRCNT                                       &kp LSFT(N6)   &win_num_20       &win_num_21     &win_num_22    &win_num_23     &win_num_24
+                &kp LSFT           &win_num_26     &win_num_27    &kp STAR       &kp SLASH          &kp EQUAL                                       &win_num_31    &win_num_32       &kp COMMA       &kp PERIOD     &kp SLASH       &kp BSLH
+                                                                  &kp LCTRL      &kp LCMD           &trans       &kp SPC               &kp ENTER    &trans         &kp BSPC          &kp LALT
+            >;
+        };
+
     };
 };

@@ -16,12 +16,13 @@
 
 #define MISCON C_AC_DESKTOP_SHOW_ALL_WINDOWS
 
-#define L_DEFAULT 0
-#define L_BT 1
-#define L_MAC_INSERT 2
-#define L_MAC_NUMBER 3
-#define L_WIN_INSERT 4
-#define L_WIN_NUMBER 5
+#define L_MAC_DEFAULT 0
+#define L_WIN_DEFAULT 1
+#define L_BT 2
+#define L_MAC_INSERT 3
+#define L_MAC_NUMBER 4
+#define L_WIN_INSERT 5
+#define L_WIN_NUMBER 6
 
 / {
     behaviors {
@@ -143,22 +144,59 @@
         };
     };
 
+    macros {
+        ctw: connect_to_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_SEL 0>
+                , <&macro_tap &to L_WIN_DEFAULT>
+                ;
+        };
+        ctm1: connect_to_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_SEL 1>
+                , <&macro_tap &to L_MAC_DEFAULT>
+                ;
+        };
+        ctm2: connect_to_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_SEL 2>
+                , <&macro_tap &to L_MAC_DEFAULT>
+                ;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer { // L_DEFAULT
-            display-name = "Utility";
+        default_layer { // L_MAC_DEFAULT
+            display-name = "MAC_Utility";
             bindings = <
-                &kp ESC   &kp SS3        &kp SS4        &mmv MOVE_UP   &trans             &kp LG(LS(Z))       &trans    &kp LG(LS(Z)) &to L_BT        &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
-                &kp TAB   &trans         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &to L_BT            &kp LEFT  &kp DOWN      &kp UP          &kp RIGHT      &mkp MB4        &kp DEL
-                &kp LSFT  &trans         &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &trans              &kp J     &kp MY_COPY   &kp MY_PASTE    &kp L          &mkp MB5        &trans
-                                         &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1            &mkp MB1  &mkp MB2      &kp LALT        &kp SS5
+                &kp ESC   &kp SS3        &kp SS4        &mmv MOVE_UP   &trans             &kp LG(LS(Z))       &trans    &kp LG(LS(Z)) &to L_MAC_INSERT &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
+                &kp TAB   &trans         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &to L_BT            &kp LEFT  &kp DOWN      &kp UP           &kp RIGHT      &mkp MB4        &kp DEL
+                &kp LSFT  &trans         &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &trans              &kp J     &kp MY_COPY   &kp MY_PASTE     &kp L          &mkp MB5        &trans
+                                         &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1            &mkp MB1  &mkp MB2      &kp LALT         &kp SS5
+            >;
+        };
+
+        win_default_layer { // L_WIN_DEFAULT
+            display-name = "WIN_Utility";
+            bindings = <
+                &kp ESC   &trasn         &trans         &mmv MOVE_UP   &trans             &kp LG(LS(Z))       &trans    &kp LG(LS(Z)) &to L_MAC_INSERT &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
+                &kp TAB   &trans         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &to L_BT            &kp LEFT  &kp DOWN      &kp UP           &kp RIGHT      &mkp MB4        &kp DEL
+                &kp LSFT  &trans         &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &trans              &kp J     &kp MY_COPY   &kp MY_PASTE     &kp L          &mkp MB5        &trans
+                                         &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1            &mkp MB1  &mkp MB2      &kp LALT         &trans
             >;
         };
 
         bt_layer { // L_BT
             bindings = <
-                &to L_DEFAULT &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3       &bt BT_SEL 4      &trans     &trans            &trans          &trans         &trans          &trans
+                &to L_MAC_DEFAULT &ctw      &ctm1          &ctm2          &bt BT_SEL 3       &bt BT_SEL 4      &trans     &trans            &trans          &trans         &trans          &trans
                 &out OUT_BLE  &trans        &trans         &trans         &trans             &trans            &trans     &trans            &trans          &trans         &trans          &trans
                 &out OUT_USB  &trans        &trans         &trans         &trans             &trans            &trans     &trans            &trans          &trans         &trans          &trans
                                         &bt BT_CLR         &trans         &trans             &trans            &trans     &trans            &trans          &trans
@@ -168,7 +206,7 @@
         // Macintosh =========================================================
         mac_insert_layer { // L_MAC_INSERT
             bindings = <
-                &ltt L_DEFAULT ESC &kp Q         &kp W          &kp E          &kp R         &kp T                                            &kp Y                  &kp U           &kp I           &kp O          &kp P           &kp BSPC
+                &ltt L_MAC_DEFAULT ESC &kp Q         &kp W          &kp E          &kp R         &kp T                                            &kp Y                  &kp U           &kp I           &kp O          &kp P           &kp BSPC
                 &kp TAB            &kp A         &kp S          &kp D          &kp F         &kp G                                            &kp H                  &kp J           &kp K           &kp L          &csc            &lr_par
                 &kp LSFT           &kp Z         &kp X          &kp C          &kp V         &kp B                                            &kp N                  &kp M           &kp COMMA       &kp PERIOD     &kp EQUAL       &l_bkt_brc
                                                                 &kp LCTRL      &kp LCMD      &lt L_MAC_NUMBER LANG2  &kp SPACE     &kp ENTER  &lt L_MAC_NUMBER LANG1 &kp BSPC        &kp LALT
@@ -177,7 +215,7 @@
 
         mac_number_layer { // L_MAC_NUMBER
             bindings = <
-                &ltt L_DEFAULT ESC &kp N1          &kp N2         &kp N3         &kp N4             &kp N5                                          &kp N6         &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
+                &ltt L_MAC_DEFAULT ESC &kp N1          &kp N2         &kp N3         &kp N4             &kp N5                                          &kp N6         &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
                 &kp TAB            &kp EXCL        &kp DQT        &kp HASH       &kp DLLR           &kp PRCNT                                       &kp AMPS       &kp SQT           &kp AT          &kp CARET      &kp TILDE       &kp BSLH
                 &kp LSFT           &kp PLUS        &kp MINUS      &kp STAR       &kp SLASH          &kp EQUAL                                       &kp GRAVE      &kp UNDER         &kp COMMA       &kp PERIOD     &kp SLASH       &r_bkt_brc
                                                                   &kp LCTRL      &kp LCMD           &trans       &kp SPC               &kp ENTER    &trans         &kp BSPC          &kp LALT
@@ -187,7 +225,7 @@
         // Windows ===========================================================
         win_insert_layer { // L_WIN_INSERT
             bindings = <
-                &ltt L_DEFAULT ESC &kp Q         &kp W          &kp E          &kp R         &kp T                                            &kp Y                  &kp U           &kp I           &kp O          &kp P           &kp BSPC
+                &ltt L_WIN_DEFAULT ESC &kp Q         &kp W          &kp E          &kp R         &kp T                                            &kp Y                  &kp U           &kp I           &kp O          &kp P           &kp BSPC
                 &kp TAB            &kp A         &kp S          &kp D          &kp F         &kp G                                            &kp H                  &kp J           &kp K           &kp L          &win_key_23     &win_key_24
                 &kp LSFT           &kp Z         &kp X          &kp C          &kp V         &kp B                                            &kp N                  &kp M           &kp COMMA       &kp PERIOD     &win_key_35     &kp RBKT
                                                                 &kp LCTRL      &kp LCMD      &lt L_MAC_NUMBER LANG2  &kp SPACE     &kp ENTER  &lt L_MAC_NUMBER LANG1 &kp BSPC        &kp LALT
@@ -196,7 +234,7 @@
 
         win_number_layer { // L_WIN_NUMBER
             bindings = <
-                &ltt L_DEFAULT ESC &kp N1          &kp N2         &kp N3         &kp N4             &kp N5                                          &kp N6         &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
+                &ltt L_WIN_DEFAULT ESC &kp N1          &kp N2         &kp N3         &kp N4             &kp N5                                          &kp N6         &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
                 &kp TAB            &kp EXCL        &kp LS(N2)   &kp HASH       &kp DLLR           &kp PRCNT                                       &kp LS(N6)   &win_num_20       &win_num_21     &win_num_22    &win_num_23     &win_num_24
                 &kp LSFT           &win_num_26     &win_num_27    &kp STAR       &kp SLASH          &kp UNDER                                       &win_num_31    &win_num_32       &kp COMMA       &kp PERIOD     &kp SLASH       &kp BSLH
                                                                   &kp LCTRL      &kp LCMD           &trans       &kp SPC               &kp ENTER    &trans         &kp BSPC          &kp LALT

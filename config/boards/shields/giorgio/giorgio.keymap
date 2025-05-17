@@ -187,7 +187,7 @@
         win_default_layer { // L_WIN_DEFAULT
             display-name = "WIN_Utility";
             bindings = <
-                &kp ESC   &trans         &trans         &mmv MOVE_UP   &trans             &kp LG(LS(Z))       &trans    &kp LG(LS(Z)) &to L_MAC_INSERT &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
+                &kp ESC   &trans         &trans         &mmv MOVE_UP   &trans             &kp LG(LS(Z))       &trans    &kp LG(LS(Z)) &to L_WIN_INSERT &kp C_BRI_DN   &kp C_BRI_UP    &kp BSPC
                 &kp TAB   &trans         &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT    &to L_BT            &kp LEFT  &kp DOWN      &kp UP           &kp RIGHT      &mkp MB4        &kp DEL
                 &kp LSFT  &trans         &kp LC(LEFT)   &kp MISCON     &kp LC(RIGHT)      &trans              &kp J     &kp MY_COPY   &kp MY_PASTE     &kp L          &mkp MB5        &trans
                                          &kp LCTRL      &kp LCMD       &mkp MB2           &mkp MB1            &mkp MB1  &mkp MB2      &kp LALT         &trans

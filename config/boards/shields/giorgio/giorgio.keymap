@@ -153,7 +153,7 @@
                 , <&macro_tap &to L_WIN_DEFAULT>
                 ;
         };
-        ctm1: connect_to_mac {
+        ctm1: connect_to_mac1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -161,7 +161,7 @@
                 , <&macro_tap &to L_MAC_DEFAULT>
                 ;
         };
-        ctm2: connect_to_mac {
+        ctm2: connect_to_mac2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings

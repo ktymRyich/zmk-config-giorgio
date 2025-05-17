@@ -194,14 +194,14 @@
             >;
         };
 
-        win_number_layer { // L_WIN_NUMBER
-            bindings = <
-                &ltt L_DEFAULT ESC &kp N1          &kp N2         &kp N3         &kp N4             &kp N5                                          &kp N6         &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
-                &kp TAB            &kp EXCL        &kp LSFT(N2)   &kp HASH       &kp DLLR           &kp PRCNT                                       &kp LSFT(N6)   &win_num_20       &win_num_21     &win_num_22    &win_num_23     &win_num_24
-                &kp LSFT           &win_num_26     &win_num_27    &kp STAR       &kp SLASH          &kp UNDER                                       &win_num_31    &win_num_32       &kp COMMA       &kp PERIOD     &kp SLASH       &kp BSLH
-                                                                  &kp LCTRL      &kp LCMD           &trans       &kp SPC               &kp ENTER    &trans         &kp BSPC          &kp LALT
-            >;
-        };
+//        win_number_layer { // L_WIN_NUMBER
+//            bindings = <
+//                &ltt L_DEFAULT ESC &kp N1          &kp N2         &kp N3         &kp N4             &kp N5                                          &kp N6         &kp N7            &kp N8          &kp N9         &kp N0          &kp BSPC
+//                &kp TAB            &kp EXCL        &kp LSFT(N2)   &kp HASH       &kp DLLR           &kp PRCNT                                       &kp LSFT(N6)   &win_num_20       &win_num_21     &win_num_22    &win_num_23     &win_num_24
+//                &kp LSFT           &win_num_26     &win_num_27    &kp STAR       &kp SLASH          &kp UNDER                                       &win_num_31    &win_num_32       &kp COMMA       &kp PERIOD     &kp SLASH       &kp BSLH
+//                                                                  &kp LCTRL      &kp LCMD           &trans       &kp SPC               &kp ENTER    &trans         &kp BSPC          &kp LALT
+//            >;
+//        };
 
     };
 };
